@@ -8,7 +8,7 @@ from ortools.sat.python import cp_model
 
 def main():
     # This program tries to find an optimal assignment of nurses to shifts
-    # (3 shifts per day, for 7 days), subject to some constraints (see below).
+    # (4 shifts per day, for 7 days), subject to some constraints (see below).
     # Each nurse can request to be assigned to specific shifts.
     # The optimal assignment maximizes the number of fulfilled shift requests.
     num_nurses = 5
@@ -17,16 +17,16 @@ def main():
     all_nurses = range(num_nurses)
     all_shifts = range(num_shifts)
     all_days = range(num_days)
-    shift_requests = [[[0, 0, 1], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 1],
-                       [0, 1, 0], [0, 0, 1]],
-                      [[0, 0, 0], [0, 0, 0], [0, 1, 0], [0, 1, 0], [1, 0, 0],
-                       [0, 0, 0], [0, 0, 1]],
-                      [[0, 0, 0], [0, 1, 0], [0, 0, 0], [1, 0, 0], [0, 0, 0],
-                       [0, 1, 0], [0, 0, 0]],
-                      [[0, 0, 0], [0, 0, 0], [1, 0, 0], [0, 1, 0], [0, 0, 0],
-                       [1, 0, 0], [0, 0, 0]],
-                      [[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 0, 0], [1, 0, 0],
-                       [0, 1, 0], [0, 0, 0]]]
+    shift_requests = [[[0, 0, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0],
+                       [0, 1, 0, 0], [0, 0, 1, 0]],
+                      [[0, 0, 0, 0], [0, 0, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0], [1, 0, 0, 0],
+                       [0, 0, 0, 0], [0, 0, 1, 0]],
+                      [[0, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0], [0, 0, 0, 0],
+                       [0, 1, 0, 0], [0, 0, 0, 0]],
+                      [[0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0],
+                       [1, 0, 0, 0], [0, 0, 0, 0]],
+                      [[0, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0], [1, 0, 0, 0],
+                       [0, 1, 0, 0], [0, 0, 0, 0]]]
     # Creates the model.
     model = cp_model.CpModel()
 
