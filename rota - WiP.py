@@ -6,6 +6,7 @@
 # Python will complain.
 
 
+
 class EmployeeGrade:
     UNASSIGNED = "Unassigned"
     M = "Manager",
@@ -90,8 +91,7 @@ class Rota:
         # This function is python's way of converting an object into a string
         # I use this to print the rota (you can change the output by simply changing this function)
         s = ""  # The final string representation will end up in this variable
-        # Go through all the assigned s
-        hifts
+        # Go through all the assigned shifts
         
         # https://dbader.org/blog/python-enumerate
         
@@ -155,4 +155,18 @@ returns False as,
 
 returns True
 
+
+e1.assignedShifts[0] == "A"
+
+Shift.A in rota.assignedShifts[0]
+
+
+["A", "B", "C", "D", "G", "NONE", "DAYOFF"]
+
+
+for s in ["A", "B", "C", "D", "G", "NONE", "DAYOFF"]:
+	s in rota.assignedShifts[0]
+
 """
+
+# GOAL IS DAY 0 COMPLETE AND REACT TO ASSIGNED OR REQUESTED SHIFTS
